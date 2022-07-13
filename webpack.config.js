@@ -14,6 +14,13 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
   },
+  devServer: {
+    static: {
+        directory: path.join(__dirname, ''),
+    },
+    compress: true,
+    port: 8080,
+  },
   module: {
     rules: [
       {
@@ -58,3 +65,7 @@ module.exports = {
   ],
   mode: "development",
 };
+
+
+// npm run start:dev
+// npx serve ./
