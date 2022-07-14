@@ -38,7 +38,7 @@ self.addEventListener("activate", function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
       let cacheKeeplist = keyList.filter(function (key) {
-        return keylist.indexOf(APP_PREFIX);
+        return key.indexOf(APP_PREFIX);
         // .keys() returns an array of all cache names, which we're calling keyList. keyList is a
         // parameter that contains all cache names under <username>.github.io. Because we may host many
         // sites from the same URL, we should filter out caches that have the app prefix. We'll capture
